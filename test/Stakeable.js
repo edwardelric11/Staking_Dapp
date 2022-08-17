@@ -155,20 +155,20 @@ contract("KanyToken", async (accounts) => {
     let owner = accounts[0];
 
     // Owner has 1 stake at this time, its the index 1 with 100 Tokens staked
-    // So lets fast forward time by 20 Hours and see if we gain 2% reward
-    const newBlock = await helper.advanceTimeAndBlock(3600 * 20);
+    // So lets fast forward time by 20 seconds and see if we gain 2% reward
+    const newBlock = await helper.advanceTimeAndBlock(20);
     let summary = await kanyToken.hasStake(owner);
 
     let stake = summary.stakes[1];
     assert.equal(
       stake.claimable,
       100 * 0.02,
-      "Reward should be 2 after staking for twenty hours with 100"
+      "Reward should be 2 after staking for twenty seconds with 100"
     );
-    // Make a new Stake for 1000, fast forward 20 hours again, and make sure total stake reward is 24 (20+4)
-    // Remember that the first 100 has been staked for 40 hours now, so its 4 in rewards.
+    // Make a new Stake for 1000, fast forward 20 seconds again, and make sure total stake reward is 24 (20+4)
+    // Remember that the first 100 has been staked for 40 seconds now, so its 4 in rewards.
     await kanyToken.stake(1000, { from: owner });
-    await helper.advanceTimeAndBlock(3600 * 20);
+    await helper.advanceTimeAndBlock(20);
 
     summary = await kanyToken.hasStake(owner);
 
@@ -178,12 +178,12 @@ contract("KanyToken", async (accounts) => {
     assert.equal(
       stake.claimable,
       100 * 0.04,
-      "Reward should be 4 after staking for 40 hours"
+      "Reward should be 4 after staking for 40 seconds"
     );
     assert.equal(
       newstake.claimable,
       1000 * 0.02,
-      "Reward should be 20 after staking 20 hours"
+      "Reward should be 20 after staking 20 seconds"
     );
   });
 
@@ -193,9 +193,9 @@ contract("KanyToken", async (accounts) => {
     let staker = accounts[3];
     await kanyToken.mint(accounts[3], 1000);
     let initial_balance = await kanyToken.balanceOf(staker);
-    // Make a stake on 200, fast forward 20 hours, claim reward, amount should be Initial balanace +4
+    // Make a stake on 200, fast forward 20 seconds, claim reward, amount should be Initial balanace +4
     await kanyToken.stake(200, { from: staker });
-    await helper.advanceTimeAndBlock(3600 * 20);
+    await helper.advanceTimeAndBlock(20);
 
     let stakeSummary = await kanyToken.hasStake(staker);
     let stake = stakeSummary.stakes[0];

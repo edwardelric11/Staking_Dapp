@@ -63,10 +63,10 @@ contract Stakeable {
 
     /**
      * @notice
-      rewardPerHour is 1000 because it is used to represent 0.001, since we only use integer numbers
+      rewardPerSecond is 1000 because it is used to represent 0.001, since we only use integer numbers
       This will give users 0.1% reward for each staked token / H
      */
-    uint256 internal rewardPerHour = 1000;
+    uint256 internal rewardPerSecond = 1000;
 
     /**
     * @notice _addStakeholder takes care of adding a stakeholder to the stakeholders array
@@ -121,11 +121,10 @@ contract Stakeable {
           // First calculate how long the stake has been active
           // Use current seconds since epoch - the seconds since epoch the stake was made
           // The output will be duration in SECONDS ,
-          // We will reward the user 0.1% per Hour. So thats 0.1% per 3600 seconds
+          // We will reward the user 0.1% per Second
           // the alghoritm is  seconds = block.timestamp - stake seconds (block.timestap - _stake.since)
-          // hours = Seconds / 3600 (seconds /3600) 3600 is an variable in Solidity names hours
-          // we then multiply each token by the hours staked , then divide by the rewardPerHour rate 
-          return (((block.timestamp - _current_stake.since) / 1 hours) * _current_stake.amount) / rewardPerHour;
+          // then divide by the rewardPerSecond rate 
+          return (((block.timestamp - _current_stake.since) * _current_stake.amount) / rewardPerSecond);
       }
 
     /**
