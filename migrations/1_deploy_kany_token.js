@@ -1,4 +1,4 @@
-// Make sure the DevToken contract is included
+// Make sure the KanyToken contract is included
 const KanyToken = artifacts.require("KanyToken");
 
 // THis is an async function, it will accept the Deployer account, the network, and eventual accounts.
