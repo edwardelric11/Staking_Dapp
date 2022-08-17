@@ -1,13 +1,170 @@
 body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+  font-family: sans-serif;
+  text-align: center;
+  background-color: #121212;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.ForModal {
+}
+modal {
+  color: #ffffff;
+}
+
+header {
+  font-size: 30px;
+  display: flex;
+  align-items: center;
+  background-color: #333333;
+  height: 60px;
+  padding: 30px 60px;
+  color: aliceblue;
+  box-shadow: 0px 8px 16px #000000;
+}
+
+h1 {
+  margin-right: auto;
+  color: #ffffff;
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 1.3px;
+  font-size: 36px;
+}
+
+.walletInfo {
+  display: inline-flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  row-gap: 40px;
+}
+
+.accountDisplay {
+  margin-right: 80px;
+}
+
+.balanceDisplay {
+  margin-right: 80px;
+}
+
+.tokenDisplay {
+  margin-right: 80px;
+}
+
+.Connect {
+  background-color: #54dffe; /* Green */
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  color: 424242;
+  font-weight: medium;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin-right: 80px;
+}
+
+.Disconnect {
+  background-color: #fe7c54; /* Green */
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  color: 424242;
+  font-weight: medium;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.Stake {
+  background-color: #bbffd9; /* Green */ /* Green */
+  border: none;
+  border-radius: 8px;
+  color: 212121;
+  font-weight: Bold;
+  letter-spacing: 1.2px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+
+.Unstake {
+  border-color:   /* Green */ ; /* Green */
+  border: 1px#52db90;
+  background-color: #333333;
+  border-radius: 8px;
+  color: #fbb6b6;
+  font-weight: Bold;
+  letter-spacing: 1.2px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 18px;
+}
+
+main {
+  font-size: 30px;
+  padding: 16px;
+  color: aliceblue;
+  background-color: #0abde3;
+}
+
+.Table {
+  padding-top: 60px;
+  height: 100vh;
+  padding-left: 60px;
+  padding-right: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: top;
+}
+
+.Claim {
+  background-color: #eb6161; /* Green */
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: Bold;
+  letter-spacing: 1.2px;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+}
+table {
+  background-color: #424242;
+  border-radius: 16px;
+  width: 1400px;
+  height: 80px;
+  padding: 30px 20px;
+  color: #ffffff;
+}
+
+.th {
+  color: #f3f3f3;
+  font-weight: normal;
+  font-size: 16px;
+  text-align: left;
+}
+
+td {
+  color: #fffff;
+  font-weight: bold;
+  font-size: 20px;
+  padding: 10px;
+  letter-spacing: 1.3px;
+  text-align: left;
+}
+
+footer {
+  font-size: 30px;
+  color: aliceblue;
+  background-color: #0a3d62;
 }
